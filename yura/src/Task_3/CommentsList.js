@@ -52,6 +52,19 @@ function CommentsList() {
     });
   };
 
+  //Change like and dislike only one function not two
+  const changeLike = (id, like, dislike) => {
+    setAllComment(() => {
+      return allComment.map((objComment) => {
+        if (objComment.id === id) {
+          return { ...objComment, like, dislike };
+        } else {
+          return { ...objComment };
+        }
+      });
+    });
+  };
+
   return (
     <div className="wrapper">
       <div className="wrapper-comment">
