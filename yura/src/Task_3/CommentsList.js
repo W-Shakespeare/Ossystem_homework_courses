@@ -35,6 +35,11 @@ function CommentsList() {
     setAllComment(() => [newComment, ...allComment]);
   };
 
+  const deleteComment = (id) => {
+    let newAllComment = allComment.filter((objComment) => objComment.id !== id);
+    setAllComment(newAllComment);
+  };
+
   return (
     <div className="wrapper">
       <div className="wrapper-comment">
@@ -47,6 +52,7 @@ function CommentsList() {
               dateCreate={commentObj.dateCreate}
               like={commentObj.like}
               dislike={commentObj.dislike}
+              deleteComment={deleteComment}
             />
           );
         })}

@@ -4,13 +4,17 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import CloseIcon from "@material-ui/icons/Close";
 import EditIcon from "@material-ui/icons/Edit";
 import SaveIcon from "@material-ui/icons/Save";
-function Comment({ id, text, dateCreate, like, dislike }) {
+function Comment({ id, text, dateCreate, like, dislike, deleteComment }) {
+  const deleteSelectedComment = () => {
+    deleteComment(id);
+  };
+
   return (
     <div className="comment">
       <div className="card text-white bg-dark mb-3">
         <div className="card-header">
           {dateCreate}
-          <CloseIcon />
+          <CloseIcon onClick={deleteSelectedComment} />
         </div>
         <div className="card-body">
           <h5 className="card-title">Your comment</h5>
