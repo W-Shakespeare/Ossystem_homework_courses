@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./Task_2/App";
+import CommentsList from "./Task_3/CommentsList";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CommentsList />
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -19,8 +19,21 @@ function CommentsList() {
   ]);
 
   return (
-    <div>
-      <Comment />
+    <div className="wrapper">
+      <div className="wrapper-comment">
+        {allComment.map((commentObj) => {
+          return (
+            <Comment
+              key={commentObj.id}
+              id={commentObj.id}
+              text={commentObj.text}
+              dateCreate={commentObj.dateCreate}
+              like={commentObj.like}
+              dislike={commentObj.dislike}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

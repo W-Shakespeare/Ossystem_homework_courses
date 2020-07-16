@@ -4,7 +4,7 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import CloseIcon from "@material-ui/icons/Close";
 import EditIcon from "@material-ui/icons/Edit";
 import SaveIcon from "@material-ui/icons/Save";
-function Comment({}) {
+function Comment({ id, text, dateCreate, like, dislike }) {
   return (
     <div className="comment">
       <div className="card text-white bg-dark mb-3">
