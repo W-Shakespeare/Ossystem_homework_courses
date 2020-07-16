@@ -1,0 +1,9 @@
+.success_Registration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.success_Registration_p {
+  color: green;
+  font-size: 40px;
+}
