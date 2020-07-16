@@ -10,6 +10,7 @@ class App extends React.Component {
       telephone_Input_Value: "",
       loading: false,
       buttonClicked: false,
+      show_Message_Success_Registration: false,
     };
   }
 
@@ -33,6 +34,11 @@ class App extends React.Component {
         show_Message_Success_Registration: true,
       });
     }, 1000);
+
+    setTimeout(
+      () => this.setState({ show_Message_Success_Registration: false }),
+      2500
+    );
   };
 
   render() {
@@ -47,6 +53,13 @@ class App extends React.Component {
           loading={this.state.loading}
           onSubmit={this.onSubmit}
         />
+        {this.state.show_Message_Success_Registration ? (
+          <div className="success_Registration">
+            <p className="success_Registration_p">Успешня регистрация</p>
+          </div>
+        ) : (
+          false
+        )}
       </div>
     );
   }
