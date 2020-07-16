@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Comment from "./Comment";
+import "./style.css";
 function CommentsList() {
   const [textarea, setTextarea] = useState("");
   const [allComment, setAllComment] = useState([
