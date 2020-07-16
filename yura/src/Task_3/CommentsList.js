@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Comment from "./Comment";
 function CommentsList() {
+  const [textarea, setTextarea] = useState("");
   const [allComment, setAllComment] = useState([
     {
       id: Date.now(),
@@ -18,6 +19,10 @@ function CommentsList() {
     },
   ]);
 
+  const onTextareaChange = (e) => {
+    setTextarea(e.target.value);
+  };
+
   return (
     <div className="wrapper">
       <div className="wrapper-comment">
@@ -33,6 +38,17 @@ function CommentsList() {
             />
           );
         })}
+      </div>
+      <div className="other">
+        <form>
+          <textarea
+            name="textarea"
+            onChange={onTextareaChange}
+            value={textarea}
+            required={true}
+          ></textarea>
+          <button className="btn">Добавить коментарий</button>
+        </form>
       </div>
     </div>
   );
