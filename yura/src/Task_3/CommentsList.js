@@ -23,6 +23,18 @@ function CommentsList() {
     setTextarea(e.target.value);
   };
 
+  const addComment = (e) => {
+    e.preventDefault();
+    let newComment = {
+      id: Date.now(),
+      dateCreate: new Date().toLocaleString(),
+      like: 0,
+      dislike: 0,
+      text: textarea,
+    };
+    setAllComment(() => [newComment, ...allComment]);
+  };
+
   return (
     <div className="wrapper">
       <div className="wrapper-comment">
@@ -40,7 +52,7 @@ function CommentsList() {
         })}
       </div>
       <div className="other">
-        <form>
+        <form onSubmit={addComment}>
           <textarea
             name="textarea"
             onChange={onTextareaChange}
