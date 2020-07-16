@@ -12,6 +12,7 @@ function Comment({
   dislike,
   deleteComment,
   editedText,
+  changeLike,
 }) {
   const [isEdit, setEdit] = useState(false);
   const [textarea, setTextarea] = useState(text);
@@ -32,6 +33,15 @@ function Comment({
 
   const onChangeTextarea = (e) => {
     setTextarea(e.target.value);
+  };
+
+  const LikePlus = () => {
+    //second argument changeLike is like
+    changeLike(id, 1, 0);
+  };
+  const DisLikePlus = () => {
+    //third argument changeLike is dislike
+    changeLike(id, 0, 1);
   };
 
   return (

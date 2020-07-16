@@ -79,6 +79,7 @@ function CommentsList() {
               dislike={commentObj.dislike}
               deleteComment={deleteComment}
               editedText={editedText}
+              changeLike={changeLike}
             />
           );
         })}
