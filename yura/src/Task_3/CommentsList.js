@@ -40,6 +40,18 @@ function CommentsList() {
     setAllComment(newAllComment);
   };
 
+  const editedText = (id, text, dateCreate) => {
+    setAllComment(() => {
+      return allComment.map((objComment) => {
+        if (objComment.id === id) {
+          return { ...objComment, text, dateCreate };
+        } else {
+          return { ...objComment };
+        }
+      });
+    });
+  };
+
   return (
     <div className="wrapper">
       <div className="wrapper-comment">
@@ -53,6 +65,7 @@ function CommentsList() {
               like={commentObj.like}
               dislike={commentObj.dislike}
               deleteComment={deleteComment}
+              editedText={editedText}
             />
           );
         })}
