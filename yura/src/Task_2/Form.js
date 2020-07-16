@@ -1,7 +1,15 @@
 import React from "react";
-function Form({ name, surname, city, telephone, on_Input_Change }) {
+function Form({
+  name,
+  surname,
+  city,
+  telephone,
+  on_Input_Change,
+  loading,
+  onSubmit,
+}) {
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <input
         required="true"
         type="text"
@@ -33,6 +41,8 @@ function Form({ name, surname, city, telephone, on_Input_Change }) {
         placeholder="telephone"
         onChange={on_Input_Change}
       ></input>
+      <br></br>
+      <button>{loading ? "...Загрузка" : "Зарегистрироваться"}</button>
     </form>
   );
 }
