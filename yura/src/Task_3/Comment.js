@@ -61,7 +61,10 @@ function Comment({
             )}
           </div>
           <div className="editIcon">
-            <div className="editIcon-thumbUpIcon editIcon-allIcons">
+            <div
+              onClick={LikePlus}
+              className="editIcon-thumbUpIcon editIcon-allIcons"
+            >
               <ThumbUpIcon color="primary" />
               <p className="p-like">{like}</p>
             </div>
@@ -71,7 +74,10 @@ function Comment({
             >
               {isEdit ? <SaveIcon /> : <EditIcon />}
             </div>
-            <div className="editIcon-thumbDownAltIcon editIcon-allIcons">
+            <div
+              onClick={DisLikePlus}
+              className="editIcon-thumbDownAltIcon editIcon-allIcons"
+            >
               <ThumbDownAltIcon color="secondary" />
               <p className="p-dislike">{dislike}</p>
             </div>
