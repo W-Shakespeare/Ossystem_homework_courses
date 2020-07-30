@@ -1,0 +1,51 @@
+body {
+  background-color: rgb(110, 112, 112);
+  /* background-color: rgb(200, 197, 197); */
+}
+.peopleList-userCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card {
+  display: flex;
+  margin: 5px;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgb(94, 87, 87) !important;
+  transition: all 1s ease-out 0s;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+.card:hover {
+  /* border-radius: 20%; */
+  border-color: white;
+  background-color: gainsboro !important;
+  transition: all 1s ease-out 0s;
+  /* transform: rotateX(40deg); */
+  /* transform: rotateY(10deg); */
+  box-shadow: 5px 2px 10px gray;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-body-favorite {
+  /* flex-direction: row; */
+}
+
+*/ .btn {
+  border-radius: 20%;
+}
+.card-img-top {
+  width: 400px !important;
+  height: 400px !important;
+}
+.img-favorite {
+  width: 100px !important;
+  height: 100px !important;
+}

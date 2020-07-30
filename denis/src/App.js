@@ -1,31 +1,42 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import PeopleList from "./PeopleList/PeopleList.js";
-import HeroDetails from "./HeroDetails/HeroDetails";
-import FavoriteList from "./FavoriteList/FavoriteList";
-function App() {
+import PropTypes from "prop-types";
+import { BrowserRouter, Route } from "react-router-dom";
+import { PeopleList, HeroDetails, FavoriteList } from "./Components";
+import { connect } from "react-redux";
+import Nav from "./Nav";
+
+App.propTypes = {
+  state: PropTypes.shape({
+    favoriteUsers: PropTypes.shape({ favorite: PropTypes.array }),
+    usersData: PropTypes.shape({
+      heroDetails: PropTypes.array,
+      usersData: PropTypes.array,
+    }),
+  }),
+};
+
+function App({ state }) {
   return (
     <div className="App">
       <BrowserRouter>
-        <div>
-          <Link to="/">PeopleList</Link>
-          <br></br>
-          <Link to="/HeroDetails">HeroDetails</Link>
-          <br></br>
-          <Link to="/FavoriteList">FavoriteList</Link>
-        </div>
+        <Nav />
         <Route exact path="/">
           <PeopleList />
         </Route>
         <Route exact path="/HeroDetails">
-          <HeroDetails />
+          <HeroDetails heroDetails={state.usersData.heroDetails} />
         </Route>
         <Route exact path="/FavoriteList">
-          <FavoriteList />
+          <FavoriteList favorite={state.favoriteUsers.favorite} />
         </Route>
       </BrowserRouter>
     </div>
   );
 }
+function mapStateToProps(state) {
+  return {
+    state,
+  };
+}
 
-export default App;
+export default connect(mapStateToProps, null)(App);

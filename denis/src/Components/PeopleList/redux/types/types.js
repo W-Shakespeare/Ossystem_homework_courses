@@ -1,0 +1,2 @@
+export const ADD_USERS_DATA = "USERS_DATA";
+export const ADD_HERO_DETAILS = "ADD_HERO_DETAILS";
